@@ -1,0 +1,37 @@
+1.预解释
+
+git：  安装的是 next 选择第三个钮（use开始的）后面的就一路next就好了  然后就安装好了
+       cmd的出现是让 桌面+alt出现
+       git --version  这个是git是否安装成功   打印出git版本
+       用户名   zhenbao419    密码：hz····   自己抽时间改一改
+
+       这是注册git的账户名之类的
+       配置环境    git config --global user.name "zhenbao419" 回车后不出错就是正确的
+                 git config --global user.email "371498488@qq.com"
+
+       创建一个本地的仓库，共三步
+             1 创建一个本地的文件夹
+             2 打开命令窗口：
+                 1. git bash 打开：鼠标右键，从右键的菜单中选择git bash
+                 2. 通过命令行窗口打开：左手按住shift，同时右手点击鼠标右键，选择在
+
+       git工作流：
+          工作区    暂存区  历史区
+
+          1.连接远程仓库：
+               git remote add origin 远程通道地址
+               git remote -v 可以查看你连接了哪些远程通道
+           2.工作流：
+               1.git add .   这个是推送的都是所有的
+               2. git commit -m"这些是写注释的内容"
+               3. git  push  origin master
+
+            注意 ： 自己本地仓库中，一定要有内容；
+
+
+
+
+基础
+面向对象
+工厂模式
+
