@@ -1,33 +1,88 @@
-1.预解释
 
-git：  安装的是 next 选择第三个钮（use开始的）后面的就一路next就好了  然后就安装好了
-       cmd的出现是让 桌面+alt出现
-       git --version  这个是git是否安装成功   打印出git版本
-       用户名   zhenbao419    密码：hz····   自己抽时间改一改
 
-       这是注册git的账户名之类的
-       配置环境    git config --global user.name "zhenbao419" 回车后不出错就是正确的
-                 git config --global user.email "371498488@qq.com"
+git： 1. 安装的是 next 选择第三个钮（use开始的）后面的就一路next就好了  然后就安装好了
+           cmd的出现是让 桌面+alt出现
+           git --version  这个是git是否安装成功   打印出git版本
+           用户名   zhenbao419    密码：hz····   自己抽时间改一改
 
-       创建一个本地的仓库，共三步
+     2.  这是注册git的账户名之类的（在最开始用git的时候就要进行这个配置环境）
+         配置环境    git config --global user.name "zhenbao419" 回车后不报错就是正确的
+                    git config --global user.email "371498488@qq.com"
+
+     3. 创建一个本地的仓库，共三步
              1 创建一个本地的文件夹
-             2 打开命令窗口：
-                 1. git bash 打开：鼠标右键，从右键的菜单中选择git bash
-                 2. 通过命令行窗口打开：左手按住shift，同时右手点击鼠标右键，选择在
 
+             2 打开命令窗口：
+                 1）. git bash 打开：鼠标右键，从右键的菜单中选择git bash
+                 2）. 通过命令行窗口打开：左手按住shift，同时右手点击鼠标右键，选择在
+            3.git init 初始化远程仓库  然后再进行下面的步骤
+
+    4.把本地仓库的内容推送到远程仓库：
        git工作流：
           工作区    暂存区  历史区
-
-          1.连接远程仓库：
-               git remote add origin 远程通道地址
+          1.创建自己的远程仓库：（这个是在git hub中操作的）
+              1）点击右上角的+号，选择 new repository 创建一个远程仓库
+              2）写上你仓库的名称
+              3）选择create repository
+                  然后创建了你的仓库了 找这个地址 赋值 再进行下面的步骤
+          2.连接远程仓库：
+               git remote add origin https://github.com/zhenbao419/newkejs1025.git（远程通道地址）
                git remote -v 可以查看你连接了哪些远程通道
-           2.工作流：
-               1.git add .   这个是推送的都是所有的
-               2. git commit -m"这些是写注释的内容"
-               3. git  push  origin master
+          3.工作流：
+               1).git add .   这个是推送的都是所有的
+               2). git commit -m"这些是写注释的内容"   回车后就会出现你所更改过的东西
+               3). git  push  origin master
+          这几个都完成后会出现你的的git用户名 还有密码要输入的  输入完成后再刷新一下就好了
 
             注意 ： 自己本地仓库中，一定要有内容；
 
+
+      5. 把本地文件夹中的内容，提交到远程仓库(与上面的是一样的)
+             1） 创建本地仓库：创建本地文件夹，并给里面创建内容，通过git init把他初始化为一个git可以管理的仓库
+             2）创建远程仓库：
+                   1）点击右上角的+号，选择 new repository 创建一个远程仓库
+                   2）写上你仓库的名称
+                   3）选择create repository
+                     然后创建了你的仓库了 找这个地址 赋值 再进行下面的步骤
+                   4）连接远程仓库：git remote add origin 远程通道的地址；
+                          查看是否连接上远程仓库： git remote -v
+                          删除远程仓库的连接： git remote rm origin
+              3）工作流：
+                    1）git add .
+                    2)git commit -m"注释"
+                    3）git push origin master
+
+
+   6.学生如何down老师的讲义：
+         1）登录你们自己的github；然后在地址栏，粘贴老师的远程仓库地址：
+         http://github.com/zhufengpeixun/Javascript201612
+         然后按回车键
+         2）点击fork: 把老师远程仓库的内容，拿到自己的远程仓库；（这一步实现的是你的仓库里面也有了）
+         3）拷贝自己远程仓库的地址：clone or download；
+         4）创建一个自己的本地文件夹 开始命令窗口
+         5）在命令行中输入
+
+
+   7.常用命令：
+      1）ls或者dir  ：可以打印出当前文件夹下有哪些文件
+      2）cd 输入想要进去的文件夹名字的一部分+tab键，就可以进入该文件夹
+
+   8.更新老师的最新讲义
+      1）等待老师把讲义更新后；
+      在第二步执行的时候先去这个文件夹内，进行git remote add XXX（如teacher） 老师的远程通道地址
+      2）git remote update XXX（如teacher）（XXX是学生连接老师远程通道的名称）
+      3）git pull XXX（如teacher） master
+
+   9 组长提交作业：
+      1）在同学文件夹下，放入自己组员的作业（新建一个文件夹然后在文件夹里面放入作业）
+      2）把自己本地的文件，上传到自己的远程（这个时候要操作： git add .
+                                                     git commit -m"zuoye"
+                                                     git pull origin master ）
+      3）pull request请求  ：请求跟老师远程合并
+            这个时候就要进行到自己的github中的那个javascript201612中的打开那个作业的文件夹进入你所更新的那个文件，这样就是把test中的东西就直接在那个网页的页面中找到这三个按钮点击 这样就能直接给老师发送了请求
+               pull request
+               new pull request
+               create pull request
 
 
 
